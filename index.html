@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazel Gandhi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        @font-face {
+            font-family: 'Cascadia Mono';
+            src: url('./fonts/CascadiaMono.woff2') format('woff2'),
+                url('./fonts/CascadiaMono.woff') format('woff'),
+                url('./fonts/CascadiaMono.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        html,
+        body {
+            font-family: 'Cascadia Mono', monospace;
+            background-color: #FBF5DD;
+        }
+
+        h1.title {
+            font-family: "Playfair Display" !important;
+            color: #16404d !important;
+            font-size: 4.5rem !important;
+            text-align: left !important;
+        }
+
+        h1 {
+            font-family: "Playfair Display";
+            color: #16404d;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-family: "Playfair Display" !important;
+            color: #16404d !important;
+            text-align: left;
+            font-size: 2rem;
+            margin-left: 6.5rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            color: #A6CDC6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .footer {
+            background-color: #f9f9f9;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            color: #555;
+            text-align: center;
+        }
+
+        a {
+            font-family: 'EB Garamond', serif !important;
+            font-size: 2rem;
+            color: #578E7E;
+
+        }
+
+        .text {
+            font-family: 'Montserrat', sans-serif !important;
+            color: #A6CDC6;
+            font-weight: 700;
+            font-size: 2 rem;
+        }
+
+        .section {
+            padding: 1rem 0;
+            /* Reduced from 2rem */
+        }
+
+        .box {
+            border-radius: 10px;
+            /* Adjust radius as needed */
+            border: 2px solid #555;
+            /* Customize border color and width */
+        }
+
+        p.subtitle {
+            font-family: "Monteserrat", sans-serif;
+            font-size: 1.5rem;
+            color: darkgoldenrod;
+        }
+
+        navbar.nav {
+            font-family: "Monteserrat", sans-serif;
+            color: darkgoldenrod;
+
+        }
+
+        .menu-column {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #FBF5DD;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            border-right: 2px solid #16404d;
+            padding-top: 80px;
+        }
+
+        .menu-column.active {
+            left: 0;
+            z-index: 1000;
+        }
+
+        .content-column.menu-open {
+            margin-left: 250px;
+        }
+
+        .menu-column .menu-label,
+        .menu-column .menu-list a {
+            font-family: "Montserrat", sans-serif !important;
+            background-color: #FBF5DD;
+            margin-top: 20px;
+
+            /* Apply the font explicitly */
+            font-size: 1.5rem;
+            /* Adjust to a reasonable size */
+            color: #16404d;
+            /* Match the parent text color */
+            text-decoration: none;
+            /* Ensure no underlines for links */
+        }
+
+        .toggle-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            background-color: #16404d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            transform: scale(1.1);
+        }
+
+        .content-column {
+            margin-left: 0;
+            /* Default position for the content */
+            transition: margin-left 0.3s ease;
+            /* Smooth transition */
+        }
+
+        .content-column.menu-open {
+            margin-left: 250px;
+            /* Move content when menu opens */
+        }
+
+        .social-icons {
+            margin-left: 1rem;
+            /* Add spacing between the name and the icons */
+            display: inline-flex;
+            /* Align icons horizontally */
+            gap: 0.5rem;
+            /* Add spacing between icons */
+        }
+
+        .social-icons a {
+            color: #578E7E;
+            /* Icon color */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease;
+            /* Add hover effect */
+        }
+
+        .social-icons a:hover {
+            color: #16404d;
+            /* Darker color on hover */
+        }
+
+        .social-icons i {
+            font-size: 2rem;
+            /* Adjust icon size */
+            vertical-align: middle;
+            /* Align icons vertically */
+        }
+
+        .row-layout {
+            display: flex;
+            /* Use flexbox to align items */
+            align-items: center;
+            /* Vertically align the name and icons */
+            gap: 1rem;
+            /* Add spacing between the name and the icons */
+        }
+
+        .social-icons a {
+            color: #578E7E;
+            /* Icon color */
+            text-decoration: none;
+            /* Remove underline */
+            transition: color 0.3s ease;
+            /* Smooth hover effect */
+        }
+
+        .social-icons a:hover {
+            color: #16404d;
+            /* Change color on hover */
+        }
+
+        .social-icons i {
+            font-size: 2rem;
+            /* Adjust icon size */
+        }
+    </style>
+</head>
+
+<body>
+    <button class="toggle-button" id="menu-toggle">
+        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
+        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
+        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
+    </button>
+    <div class="menu-column" id="menu">
+        <aside class="menu">
+            <ul class="menu-list">
+                <li><a href="#projects">Home</a></li>
+                <li><a href="#published-work">Published Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </aside>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+
+            toggleButton.addEventListener('click', () => {
+                menu.classList.toggle('active');
+                content.classList.toggle('menu-open');
+            });
+        });
+    </script>
+    <div class="content-column" id="content">
+        <section class="section">
+            <div class="container content">
+                <div class="row-layout">
+                    <div class="row-layout is-flex is-align-items-center">
+                        <h1 class="title is-35">
+                            Hazel Gandhi
+                        </h1>
+                        <span class="social-icons">
+                            <a href="https://in.linkedin.com/in/hazelgandhi" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/hazel-gandhi" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://x.com/HazelGandhi" target="_blank" aria-label="X (formerly Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://bsky.app/profile/yourhandle" target="_blank" aria-label="Bluesky">
+                                <i class="fas fa-cloud"></i>
+                            </a>
+                            <a href="mailto:hg2730@columbia.edu" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="row-layout">
+
+                    <p class="subtitle">
+                        Hi! I am from Mumbai, India, currently pursuing an MS in Data Journalism from Columbia
+                        Journalism School.
+                        As a former fact-checker, I am obsessed with investigating social media platforms and how their
+                        policies (or lack thereof) contribute to mis/disinformation, scams, and overall harm vulnerable
+                        groups online.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <h2>&lt;Projects&gt;</h2>
+        <section class>
+            <div class="container content">
+                <!-- Project 1 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="images/aqi.jpg" alt="Auto-updating AQI Map">
+                        </figure>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a href="https://hazel-gandhi.github.io/Auto-updating-AQI-website/">Auto-updating AQI
+                                Map</a>
+                        </p>
+                        <p class="text">A project that dynamically updates India's air quality information.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">Img2Table</span>
+                            <span class="tag is-warning">Python/Pandas</span>
+                            <span class="tag is-warning">Datawrapper</span>
+                            <span class="tag is-warning">Github Actions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a href="https://hazel-gandhi.github.io/AI-Legislation-Map/">AI Legislation Map</a>
+                        </p>
+                        <p class="text">An analysis of AI-related bills proposed in Congress by each
+                            representative.
+                            I merged this data
+                            with the Lobbying Disclosure API to show which tech companies lobbied for which bills.
+                            Insights
+                            include individual party and state contributions to bills as well.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">Python/Pandas</span>
+                            <span class="tag is-warning">BeautifulSoup</span>
+                            <span class="tag is-warning">Playwright</span>
+                            <span class="tag is-warning">API</span>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="images/ai.jpg" alt="AI Legislation Map">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2>&lt;/Projects&gt;</h2>
+
+        <h2>&lt;Published Work&gt;</h2>
+        <section>
+            <div class="container content">
+                <!-- Published Work 1 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="https://www.cjr.org/wp-content/uploads/2024/11/courier-newsroom-1.jpg" alt="">
+                        </figure>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a
+                                href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php">
+                                Courier Newsroom Spent Big on a Meta Ad Blitz in October
+                            </a>
+                        </p>
+                        <p class="text">The $6 million–plus the progressive ‘newsroom’ spent on Meta lagged only the
+                            official Trump and
+                            Harris campaigns.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">Facebook Ad Library Analysis</span>
+                            <span class="tag is-warning">Election 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="custom-divider">
+                <!-- Published Work 2 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a
+                                href="https://columbianewsservice.com/2024/11/26/despite-residents-opposition-soccer-field-with-artificial-turf-under-construction-in-inwood-hill-park/">
+                                Artificial Turf Battle Emerges in Inwood Hill Park
+                            </a>
+                        </p>
+                        <p class="text">“There’s nothing like it left in the city,” said Nathan Currier, 63, an Inwood
+                            resident and
+                            frequent visitor. However, Currier and other Inwood residents contend that the park’s
+                            natural
+                            beauty is being destroyed by the construction of an artificial-turf soccer field.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">Local Reporting</span>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="https://theuptowner.org/wp-content/uploads/2024/10/IMG_0047-2-1-800x365.png"
+                                alt="">
+                        </figure>
+                    </div>
+                </div>
+                <hr class="custom-divider">
+                <!-- Published Work 3 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="https://theuptowner.org/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-17-at-11.31.46-800x365.jpeg"
+                                alt="">
+                        </figure>
+                    </div>
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a
+                                href="https://columbianewsservice.com/2024/12/05/despite-community-efforts-childhood-asthma-worsens-in-east-harlem/">
+                                Despite Community Efforts, Childhood Asthma Worsens in East Harlem
+                            </a>
+                        </p>
+                        <p class="text">As the weather grows colder, parents of children with asthma in New York are on
+                            notice; the cold
+                            can be a trigger.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">Local Reporting</span>
+                            <span class="tag is-warning">Healthcare</span>
+                        </div>
+                    </div>
+                </div>
+                <hr class="custom-divider">
+                <!-- Published Work 4 -->
+                <div class="columns is-vcentered">
+                    <div class="column is-two-thirds">
+                        <p class="title is-4">
+                            <a
+                                href="https://www.boomlive.in/fact-check/rahul-gandhi-manipur-kuki-militants-satire-tweet-2240626/">
+                                Satire Tweet About Rahul Gandhi Meeting Kuki Militants Shared As Real
+                            </a>
+                        </p>
+                        <p class="text">BOOM found that the tweet was made by a parody PTI handle that has changed its
+                            name repeatedly in the past.</p>
+                        <div class="tags is-rounded">
+                            <span class="tag is-warning">OSINT</span>
+                            <span class="tag is-warning">Fact-checking</span>
+                        </div>
+                    </div>
+
+                    <div class="column is-one-third">
+                        <figure class="image">
+                            <img src="https://www.boomlive.in/h-upload/2023/06/30/1010157-rahul-in-manipur-01.webp"
+                                alt="">
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+            <h2>&lt;/Published Work&gt;</h2>
+    </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Hazel Gandhi. Built with Bulma.</p>
+    </footer>
+    </div>
+</body>
+
+</html>
