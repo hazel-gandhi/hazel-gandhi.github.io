@@ -45,11 +45,20 @@
             font-family: "loretta" !important;
             color: #16404d !important;
             text-align: left;
-            font-size: 2rem;
-            margin-left: 6.5rem;
+            font-size: 8rem;
             margin-top: 0.5rem;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
+        }
+
+        .card-content h3 {
+            font-family: "loretta" !important;
+            color: #16404d !important;
+            text-align: left;
+            font-size: 3rem !important;
+            /* Adjust size as needed */
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
         }
 
         p {
@@ -238,33 +247,6 @@
 </head>
 
 <body>
-    <button class="toggle-button" id="menu-toggle">
-        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
-        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
-        <span style="display: block; height: 3px; width: 25px; background-color: white; margin: 5px 0;"></span>
-    </button>
-    <div class="menu-column" id="menu">
-        <aside class="menu">
-            <ul class="menu-list">
-                <li><a href="#projects">Home</a></li>
-                <li><a href="#published-work">Published Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </aside>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggleButton = document.getElementById('menu-toggle');
-            const menu = document.getElementById('menu');
-            const content = document.getElementById('content');
-
-            toggleButton.addEventListener('click', () => {
-                menu.classList.toggle('active');
-                content.classList.toggle('menu-open');
-            });
-        });
-    </script>
     <div class="content-column" id="content">
         <section class="section">
             <div class="container content">
@@ -319,23 +301,23 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <p class="title is-4">
+                                <h3>
                                     <a href="https://hazel-gandhi.github.io/community-notes-analysis/">Community Notes
                                         Might
                                         Not Be As Successful as X Claims They Are</a>
-                                </p>
+                                </h3>
                                 <p class="text">X has given users the power of crowd-sourced fact-checking, and here’s
                                     how
-                                    it’s going</p>
+                                    it’s going.</p>
                                 <div class="tags are-small is-rounded">
                                     <span class="tag is-warning">Python/Pandas</span>
                                     <span class="tag is-warning">Regex</span>
                                     <span class="tag is-warning">Datawrapper</span>
-
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <!-- Project 2 -->
                     <div class="column is-one-third">
                         <div class="card">
@@ -360,8 +342,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="columns is-multiline">
+
                     <!-- Project 3 -->
                     <div class="column is-one-third">
                         <div class="card">
@@ -399,7 +380,8 @@
                                     <a href="https://hazel-gandhi.github.io/AI-Legislation-Map/">AI Legislation Map</a>
                                 </p>
                                 <p class="text">An analysis of AI-related bills proposed in Congress by each
-                                    representative.</p>
+                                    representative.
+                                </p>
                                 <div class="tags are-small is-rounded">
                                     <span class="tag is-warning">Python/Pandas</span>
                                     <span class="tag is-warning">BeautifulSoup</span>
@@ -412,6 +394,7 @@
                 </div>
             </div>
         </section>
+
 
         <section class="section">
             <div class="container content">
