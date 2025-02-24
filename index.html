@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/twn5dyr.css">
     <link rel="stylesheet" href="https://use.typekit.net/twn5dyr.css">
+    <link rel="stylesheet" href="https://use.typekit.net/twn5dyr.css">
+
     <style>
         @font-face {
             font-family: 'Cascadia Mono';
@@ -30,9 +32,9 @@
         }
 
         h1.title {
-            font-family: "loretta" !important;
+            font-family: "Poppins", sans-serif !important;
             color: #16404d !important;
-            font-size: 4.5rem !important;
+            font-size: 5rem !important;
             text-align: left !important;
         }
 
@@ -46,20 +48,21 @@
             font-family: "loretta" !important;
             color: #16404d !important;
             text-align: left;
-            font-size: 8rem;
+            font-size: 3rem !important;
             margin-top: 0.5rem;
             padding-top: 0.5rem;
             padding-bottom: 0.5rem;
         }
 
-        .title p {
-            font-family: "nicholas-regular" !important;
+        .card .card-content p.title a {
+            font-family: 'basic-sans', sans-serif !important;
+            font-style: normal;
             color: #16404d !important;
             text-align: left;
-            font-size: 3rem !important;
-            /* Adjust size as needed */
+            font-size: 1.5rem !important;
             margin-top: 0.5rem;
             padding-top: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         p {
@@ -88,10 +91,11 @@
         }
 
         .text {
-            font-family: 'Montserrat', sans-serif !important;
-            color: #A6CDC6;
+            font-family: 'nicholas-regular', sans-serif !important;
+            color: #578E7E;
             font-weight: 700;
             font-size: 2 rem;
+            margin-top: 0.5rem;
         }
 
         .section {
@@ -107,8 +111,8 @@
         }
 
         p.subtitle {
-            font-family: "Monteserrat", sans-serif;
-            font-size: 1.5rem;
+            font-family: "loretta", serif;
+            font-size: 1.25rem;
             color: darkgoldenrod;
         }
 
@@ -118,62 +122,7 @@
 
         }
 
-        .menu-column {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #FBF5DD;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
-            border-right: 2px solid #16404d;
-            padding-top: 80px;
-        }
 
-        .menu-column.active {
-            left: 0;
-            z-index: 1000;
-        }
-
-        .content-column.menu-open {
-            margin-left: 250px;
-        }
-
-        .menu-column .menu-label,
-        .menu-column .menu-list a {
-            font-family: "Montserrat", sans-serif !important;
-            background-color: #FBF5DD;
-            margin-top: 20px;
-
-            /* Apply the font explicitly */
-            font-size: 1.5rem;
-            /* Adjust to a reasonable size */
-            color: #16404d;
-            /* Match the parent text color */
-            text-decoration: none;
-            /* Ensure no underlines for links */
-        }
-
-        .toggle-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1100;
-            background-color: #16404d;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .toggle-button:hover {
-            transform: scale(1.1);
-        }
 
         .content-column {
             margin-left: 0;
@@ -244,6 +193,15 @@
             font-size: 2rem;
             /* Adjust icon size */
         }
+
+        .black-line {
+            width: 100% !important;
+            height: 2px !important;
+            /* Thickness of the line */
+            background-color: #000 !important;
+            /* Black color */
+            margin: 1rem 0 !important;
+        }
     </style>
 </head>
 
@@ -251,9 +209,10 @@
     <div class="content-column" id="content">
         <section class="section">
             <div class="container content">
-                <div class="row-layout">
-                    <div class="row-layout is-flex is-align-items-center">
-                        <h1 class="title is-35">
+                <div class="columns is-vcentered">
+                    <!-- Left Column: Title and Icons -->
+                    <div class="column is-half has-text-centered">
+                        <h1 class="title">
                             Hazel Gandhi
                         </h1>
                         <span class="social-icons">
@@ -274,216 +233,220 @@
                             </a>
                         </span>
                     </div>
-                </div>
-                <div class="row-layout">
 
-                    <p class="subtitle">
-                        Hi! I am from Mumbai, India, currently pursuing an MS in Data Journalism from Columbia
-                        Journalism School.
-                        As a former fact-checker, I am obsessed with investigating social media platforms and how their
-                        policies (or lack thereof) contribute to mis/disinformation, scams, and overall harm vulnerable
-                        groups online.
+                    <!-- Middle Divider -->
 
-                    </p>
-                </div>
-            </div>
-        </section>
+                    <div class="black-line"></div>
 
-        <section class="section">
-            <div class="container content">
-                <h2>Projects</h2>
-                <div class="columns is-multiline">
-                    <!-- Project 1 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="images/hero-img-cn.png" alt="Community Notes Hero Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title">
-                                    <a href="https://hazel-gandhi.github.io/community-notes-analysis/">Community Notes
-                                        Might
-                                        Not Be As Successful as X Claims They Are</a>
-                                </p class="title">
-                                <p class="text">X has given users the power of crowd-sourced fact-checking, and here’s
-                                    how
-                                    it’s going.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Python/Pandas</span>
-                                    <span class="tag is-warning">Regex</span>
-                                    <span class="tag is-warning">Datawrapper</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Project 2 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="images/hero-img-retraction.jpg" alt="Retraction Hero Image">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a href="https://hazel-gandhi.github.io/academic-retractions-analysis/">Retractions
-                                        in
-                                        Academic Studies Rise as Crackdown Begins On Paper Mills</a>
-                                </p>
-                                <p class="text">Paper mills, known for publishing fraudulent or low-quality studies,
-                                    have
-                                    seen an increasing number of retractions since 2023.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Ggplot</span>
-                                    <span class="tag is-warning">Python/Pandas</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="images/aqi.jpg" alt="Auto-updating AQI Map">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a href="https://hazel-gandhi.github.io/Auto-updating-AQI-website/">Auto-updating
-                                        AQI Map</a>
-                                </p>
-                                <p class="text">A project that dynamically updates India's air quality information.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Img2Table</span>
-                                    <span class="tag is-warning">Python/Pandas</span>
-                                    <span class="tag is-warning">Datawrapper</span>
-                                    <span class="tag is-warning">Github Actions</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="images/ai.jpg" alt="AI Legislation Map">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a href="https://hazel-gandhi.github.io/AI-Legislation-Map/">AI Legislation Map</a>
-                                </p>
-                                <p class="text">An analysis of AI-related bills proposed in Congress by each
-                                    representative.
-                                </p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Python/Pandas</span>
-                                    <span class="tag is-warning">BeautifulSoup</span>
-                                    <span class="tag is-warning">Playwright</span>
-                                    <span class="tag is-warning">API</span>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Right Column: Subtitle -->
+                    <div class="column is-half has-text-left-aligned">
+                        <p class="subtitle">
+                            Hi! I am a data journalism student based in New York City.
+                            As a former fact-checker, I am obsessed with investigating how social media platforms, their
+                            biases, ads, community guideline violations, and everything else they do that affects
+                            humans.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
+    </div>
 
 
-        <section class="section">
-            <div class="container content">
-                <h2>Published Work</h2>
-                <div class="columns is-multiline">
-                    <!-- Published Work 1 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="https://www.cjr.org/wp-content/uploads/2024/11/courier-newsroom-1.jpg"
-                                        alt="">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a
-                                        href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php">
-                                        Courier Newsroom Spent Big on a Meta Ad Blitz
-                                    </a>
-                                </p>
-                                <p class="text">The $6 million–plus the progressive ‘newsroom’ spent on Meta lagged only
-                                    the official Trump and Harris campaigns.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Facebook Ad Library Analysis</span>
-                                    <span class="tag is-warning">Election 2024</span>
-                                </div>
+    <section class="section">
+        <div class="container content">
+            <h2>Projects</h2>
+            <div class="columns is-multiline">
+                <!-- Project 1 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="images/hero-img-cn.png" alt="Community Notes Hero Image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a href="https://hazel-gandhi.github.io/community-notes-analysis/">Community Notes
+                                    Might Not Be As Successful as X Claims They Are</a>
+                            </p>
+                            <p class="text">X has given users the power of crowd-sourced fact-checking, and here’s
+                                how
+                                it’s going.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Python/Pandas</span>
+                                <span class="tag is-warning">Regex</span>
+                                <span class="tag is-warning">Datawrapper</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Published Work 2 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="https://theuptowner.org/wp-content/uploads/2024/10/IMG_0047-2-1-800x365.png"
-                                        alt="">
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a
-                                        href="https://columbianewsservice.com/2024/11/26/despite-residents-opposition-soccer-field-with-artificial-turf-under-construction-in-inwood-hill-park/">
-                                        Artificial Turf Battle Emerges in Inwood Hill Park
-                                    </a>
-                                </p>
-                                <p class="text">Residents contend that the park’s natural beauty is being destroyed by
-                                    the construction of an artificial-turf soccer field.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Local Reporting</span>
-                                </div>
+                <!-- Project 2 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="images/hero-img-retraction.jpg" alt="Retraction Hero Image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a href="https://hazel-gandhi.github.io/academic-retractions-analysis/">Retractions
+                                    in
+                                    Academic Studies Rise as Crackdown Begins On Paper Mills</a>
+                            </p>
+                            <p class="text">Paper mills, known for publishing fraudulent or low-quality studies,
+                                have
+                                seen an increasing number of retractions since 2023.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Ggplot</span>
+                                <span class="tag is-warning">Python/Pandas</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Published Work 3 -->
-                    <div class="column is-one-third">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img src="https://theuptowner.org/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-17-at-11.31.46-800x365.jpeg"
-                                        alt="">
-                                </figure>
+                <!-- Project 3 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="images/aqi.jpg" alt="Auto-updating AQI Map">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title">
+                                <a href="https://hazel-gandhi.github.io/Auto-updating-AQI-website/">Auto-updating
+                                    AQI Map</a>
+                            </p>
+                            <p class="text">A project that dynamically updates India's air quality information.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Img2Table</span>
+                                <span class="tag is-warning">Python/Pandas</span>
+                                <span class="tag is-warning">Datawrapper</span>
+                                <span class="tag is-warning">Github Actions</span>
                             </div>
-                            <div class="card-content">
-                                <p class="title is-4">
-                                    <a
-                                        href="https://columbianewsservice.com/2024/12/05/despite-community-efforts-childhood-asthma-worsens-in-east-harlem/">
-                                        Childhood Asthma Worsens in East Harlem
-                                    </a>
-                                </p>
-                                <p class="text">Parents of children with asthma in New York are on notice; the cold can
-                                    be a trigger.</p>
-                                <div class="tags are-small is-rounded">
-                                    <span class="tag is-warning">Local Reporting</span>
-                                    <span class="tag is-warning">Healthcare</span>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="images/ai.jpg" alt="AI Legislation Map">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a href="https://hazel-gandhi.github.io/AI-Legislation-Map/">AI Legislation Map</a>
+                            </p>
+                            <p class="text">An analysis of AI-related bills proposed in Congress by each
+                                representative.
+                            </p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Python/Pandas</span>
+                                <span class="tag is-warning">BeautifulSoup</span>
+                                <span class="tag is-warning">Playwright</span>
+                                <span class="tag is-warning">API</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer class="footer">
-            <p>© 2025 Hazel Gandhi. Built with Bulma.</p>
-        </footer>
+
+    <section class="section">
+        <div class="container content">
+            <h2>Published Work</h2>
+            <div class="columns is-multiline">
+                <!-- Published Work 1 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://www.cjr.org/wp-content/uploads/2024/11/courier-newsroom-1.jpg" alt="">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a
+                                    href="https://www.cjr.org/tow_center/courier-newsroom-spent-big-on-a-meta-ad-blitz-in-october.php">
+                                    Courier Newsroom Spent Big on a Meta Ad Blitz
+                                </a>
+                            </p>
+                            <p class="text">The $6 million–plus the progressive ‘newsroom’ spent on Meta lagged only
+                                the official Trump and Harris campaigns.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Facebook Ad Library Analysis</span>
+                                <span class="tag is-warning">Election 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Published Work 2 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://theuptowner.org/wp-content/uploads/2024/10/IMG_0047-2-1-800x365.png"
+                                    alt="">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a
+                                    href="https://columbianewsservice.com/2024/11/26/despite-residents-opposition-soccer-field-with-artificial-turf-under-construction-in-inwood-hill-park/">
+                                    Artificial Turf Battle Emerges in Inwood Hill Park
+                                </a>
+                            </p>
+                            <p class="text">Residents contend that the park’s natural beauty is being destroyed by
+                                the construction of an artificial-turf soccer field.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Local Reporting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Published Work 3 -->
+                <div class="column is-one-third">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://theuptowner.org/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-17-at-11.31.46-800x365.jpeg"
+                                    alt="">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">
+                                <a
+                                    href="https://columbianewsservice.com/2024/12/05/despite-community-efforts-childhood-asthma-worsens-in-east-harlem/">
+                                    Childhood Asthma Worsens in East Harlem
+                                </a>
+                            </p>
+                            <p class="text">Parents of children with asthma in New York are on notice; the cold can
+                                be a trigger.</p>
+                            <div class="tags are-small is-rounded">
+                                <span class="tag is-warning">Local Reporting</span>
+                                <span class="tag is-warning">Healthcare</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Hazel Gandhi. Built with Bulma.</p>
+    </footer>
     </div>
 </body>
 
