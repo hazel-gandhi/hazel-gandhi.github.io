@@ -262,6 +262,30 @@
         }
 
         /* Responsive adjustments */
+        @media screen and (max-width: 1024px) {
+            .project-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .project-tile.large {
+                grid-column: span 6;
+                grid-row: span 2;
+            }
+
+            .project-tile.medium {
+                grid-column: span 6;
+            }
+
+            .project-tile.small,
+            .project-tile.tall {
+                grid-column: span 6;
+            }
+
+            h1.title {
+                font-size: 4rem !important;
+            }
+        }
+
         @media screen and (max-width: 768px) {
             .project-grid {
                 grid-template-columns: 1fr;
@@ -277,19 +301,150 @@
 
             .header-container {
                 flex-direction: column;
-            }
-
-            .header-left {
-                max-width: 100%;
-            }
-
-            .header-right {
-                align-self: flex-start;
+                gap: 2rem;
             }
 
             h1.title {
-                font-size: 5rem !important;
+                font-size: 3.5rem !important;
+                text-align: center !important;
             }
+
+            .subtitle {
+                font-size: 1rem !important;
+                text-align: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1.title {
+                font-size: 2.5rem !important;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .project-content {
+                padding: 1rem;
+            }
+
+            .project-title {
+                font-size: 1.2rem;
+            }
+
+            .project-description {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        /* ========= ADDED OVERRIDES (only CSS changes below) =========
+           Purpose: ensure project tiles don't overlap headings on small screens,
+           keep tile heights reasonable on mobile, keep overlays stacked correctly.
+        ============================================================ */
+
+        /* global box-sizing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* make sure the project's grid sits visually below headings */
+        .project-grid {
+            margin-top: 0.75rem;
+        }
+
+        /* create a stacking context inside each tile so overlays don't escape */
+        .project-tile {
+            isolation: isolate;
+        }
+
+        /* ensure images behave predictably (prevents huge overflow heights on some phones) */
+        .project-tile img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: none;
+        }
+
+        /* bump overlay/content stacking to be explicit */
+        .project-tile::before {
+            z-index: 2;
+        }
+
+        .project-content {
+            z-index: 3;
+        }
+
+        /* reduce the large fixed min-height for "small" tiles on narrower screens */
+        @media screen and (max-width: 1024px) {
+            .project-tile.small,
+            .project-tile.tall {
+                min-height: 320px;
+            }
+
+            .project-tile.large {
+                min-height: 380px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /* shorter, consistent tile heights on phones so the grid doesn't collide with headings */
+            .project-tile.large,
+            .project-tile.medium,
+            .project-tile.small,
+            .project-tile.tall {
+                min-height: 220px;
+            }
+
+            /* slightly tighter gaps on mobile */
+            .project-grid {
+                gap: 1rem;
+            }
+
+            /* make sure the section heading remains above the first tile (prevents visual overlap) */
+            h2 {
+                position: relative;
+                z-index: 6;
+                margin-bottom: 0.75rem;
+                padding-bottom: 0.25rem;
+            }
+
+            /* give extra breathing room between header and grid */
+            .section > .project-grid,
+            .section > .black-line + .project-grid {
+                margin-top: 0.5rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .project-tile.large,
+            .project-tile.medium,
+            .project-tile.small,
+            .project-tile.tall {
+                min-height: 200px;
+            }
+
+            .project-description {
+                max-width: 100%;
+            }
+
+            .project-tags {
+                gap: 0.35rem;
+            }
+        }
+
+        /* small safety: ensure long titles wrap instead of being clipped */
+        .project-title {
+            word-break: break-word;
+            line-height: 1.15;
         }
     </style>
 </head>
@@ -312,9 +467,8 @@
                 </div>
                 <div class="header-right">
                     <p class="subtitle">
-                        Hi! I am a data journalism student based in New York City.
-                        As a former fact-checker, I am obsessed with investigating social media platforms and how their
-                        lack of moderation and intervention causes misinformaiton, harm and discrimination.
+                        Hi! I am a data journalist based in New York City.
+                        Originally from Mumbai, India, I’m passionate about tech and local reporting, and I use data analysis and visualizations to strengthen my storytelling.
                     </p>
                 </div>
             </div>
@@ -366,7 +520,7 @@
                         <div class="project-content">
                             <h3 class="project-title">CHILD CARE ACCESS UNDER THREAT IN NY</h3>
                             <p class="project-description">Parents in New York relied heavily on vouchers to pay for
-                                child care, especially during the pandemic. Now, funds for those vouchers are depleting.
+                                child care. Those funds are running out.
                             </p>
                             <div class="project-tags">
                                 <span class="project-tag">QGIS</span>
