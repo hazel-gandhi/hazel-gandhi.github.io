@@ -63,7 +63,7 @@
         }
 
         h2::after {
-            content: "*";
+
             display: inline;
             margin-left: 5px;
         }
@@ -351,7 +351,9 @@
         ============================================================ */
 
         /* global box-sizing */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
@@ -385,6 +387,7 @@
 
         /* reduce the large fixed min-height for "small" tiles on narrower screens */
         @media screen and (max-width: 1024px) {
+
             .project-tile.small,
             .project-tile.tall {
                 min-height: 320px;
@@ -396,6 +399,7 @@
         }
 
         @media screen and (max-width: 768px) {
+
             /* shorter, consistent tile heights on phones so the grid doesn't collide with headings */
             .project-tile.large,
             .project-tile.medium,
@@ -418,13 +422,14 @@
             }
 
             /* give extra breathing room between header and grid */
-            .section > .project-grid,
-            .section > .black-line + .project-grid {
+            .section>.project-grid,
+            .section>.black-line+.project-grid {
                 margin-top: 0.5rem;
             }
         }
 
         @media screen and (max-width: 480px) {
+
             .project-tile.large,
             .project-tile.medium,
             .project-tile.small,
@@ -468,8 +473,13 @@
                 <div class="header-right">
                     <p class="subtitle">
                         Hi! I'm Hazel Gandhi, a Data Reporting Fellow at Rest of World based in New York City.
-I’m passionate about using data to tell compelling stories, a focus that drives my work at Rest of World, where I help integrate data into our coverage of global technology.
-You can explore some of my published work and projects from Columbia Journalism School below.
+                        I’m passionate about using data to tell compelling stories, a focus that drives my work at Rest
+                        of World, where I help integrate data into our coverage of global technology.
+                        You can explore some of my recent stories <a href="https://restofworld.org/author/hazel-gandhi/"
+                            style="text-decoration: underline;">here</a> and work from my time as a
+                        graduate student at Columbia Journalism School <a
+                            href="https://www.cjr.org/tow_center/as-tech-companies-further-embrace-community-notes-tow-center-speaks-to-contributors-and-experts-about-persistent-issues.php"
+                            style="text-decoration: underline;">here</a>.
                     </p>
                 </div>
             </div>
@@ -478,18 +488,18 @@ You can explore some of my published work and projects from Columbia Journalism 
         </section>
 
         <section class="section">
-            <h2>PROJECTS</h2>
+            <h2>RECENT WORK, SELECT PROJECTS:</h2>
             <div class="project-grid">
                 <!-- Project 1 (Large) -->
 
-                 <div class="project-tile large">
-                    <a
-                        href="https://restofworld.org/2025/data-center-heat-map/">
+                <div class="project-tile large">
+                    <a href="https://restofworld.org/2025/data-center-heat-map/">
                         <img src="images/hero-img-data-centers.jpg" alt="Data Centers Hero Image">
                         <div class="project-content">
-                            <h3 class="project-title">REST OF WORLD: WE MAPPED THE WORLD'S HOTTEST DATA CENTERS
+                            <h3 class="project-title">We mapped the world's hottest data centers
                             </h3>
-                            <p class="project-description">In 21 countries, all data centers are located in climates that are too hot.</p>
+                            <p class="project-description">In 21 countries, all data centers are located in climates
+                                that are too hot.</p>
                             <div class="project-tags">
                                 <span class="project-tag">QGIS</span>
                                 <span class="project-tag">Geopandas</span>
@@ -500,13 +510,63 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
-                
+                <div class="project-tile tall">
+                    <a href="https://restofworld.org/2026/us-politicians-china-policy-family-tech-stock-trades/">
+                        <img src="images/us-politicians.jpg" alt="Congressional stocks image">
+                        <div class="project-content">
+                            <h3 class="project-title">While politicians shape U.S.-China relations, their families turn
+                                to the stock market
+                            </h3>
+                            <p class="project-description">Politicians’ spouses and children are buying and selling
+                                stocks in TSMC, Alibaba, and Tencent.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Google Sheets</span>
+                                <span class="project-tag">Congressional data analysis</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-tile tall">
+                    <a href="https://restofworld.org/2026/polymarket-online-betting-politics-war-charts/">
+                        <img src="images/polymarket.jpg" alt="Polymarket Hero Image">
+                        <div class="project-content">
+                            <h3 class="project-title">$50 on war in Iran: How geopolitical bets have surged on
+                                Polymarket, in five charts
+                            </h3>
+                            <p class="project-description">Online traders are betting millions on war, airstrikes, and
+                                political unrest.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Polymarket API</span>
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Datawrapper</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-tile tall">
+                    <a href="https://restofworld.org/2026/meta-online-gambling-ads/">
+                        <img src="images/meta-gambling-hero.jpg" alt="Meta Hero Image">
+                        <div class="project-content">
+                            <h3 class="project-title">Countries are outlawing online gambling ads. Meta is selling them
+                                anyway
+                            </h3>
+                            <p class="project-description">A Rest of World analysis found Meta is disregarding local
+                                laws and the company’s own guidelines in at least 13 countries.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Meta ad library analysis</span>
+                                <span class="project-tag">Python</span>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
                 <div class="project-tile tall">
                     <a
                         href="https://www.cjr.org/tow_center/as-tech-companies-further-embrace-community-notes-tow-center-speaks-to-contributors-and-experts-about-persistent-issues.php">
                         <img src="images/hero-img-cn.jpg" alt="Community Notes Hero Image">
                         <div class="project-content">
-                            <h3 class="project-title">COLUMBIA JOURNALISM REVIEW: GET NOTED
+                            <h3 class="project-title">Columbia Journalism Review: Get Noted
                             </h3>
                             <p class="project-description">X has given users the power of crowd-sourced fact-checking,
                                 and here's how it's going.</p>
@@ -517,18 +577,18 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
-                
 
-                
+
+
 
                 <div class="project-tile medium">
-                    <a
-                        href="https://restofworld.org/2025/oman-etlaq-space-launch/">
+                    <a href="https://restofworld.org/2025/oman-etlaq-space-launch/">
                         <img src="images/oman.jpg" alt="">
                         <div class="project-content">
-                            <h3 class="project-title">REST OF WORLD: GLOBAL SPACEPORTS
+                            <h3 class="project-title">Rest of World: Global Spaceports
                             </h3>
-                            <p class="project-description">A story I published with Rest of World about Oman's growing space infrastructure</p>
+                            <p class="project-description">A story I published with Rest of World about Oman's growing
+                                space infrastructure</p>
                             <div class="project-tags">
                                 <span class="project-tag">JavaScript</span>
                                 <span class="project-tag">D3.JS</span>
@@ -543,7 +603,7 @@ You can explore some of my published work and projects from Columbia Journalism 
                     <a href="https://hazel-gandhi.github.io/childcare-ny/">
                         <img src="images/hero-img-childcare.jpg" alt="Child Care NY">
                         <div class="project-content">
-                            <h3 class="project-title">CHILD CARE ACCESS UNDER THREAT IN NY</h3>
+                            <h3 class="project-title">Child care access under threat in NY</h3>
                             <p class="project-description">Parents in New York relied heavily on vouchers to pay for
                                 child care. Those funds are running out.
                             </p>
@@ -556,13 +616,11 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
-
                 <div class="project-tile tall">
-                    <a
-                        href="https://hazel-gandhi.github.io/mayoral-map/">
+                    <a href="https://hazel-gandhi.github.io/mayoral-map/">
                         <img src="images/mayoral-map.jpg" alt="">
                         <div class="project-content">
-                            <h3 class="project-title">NEW YORK CITY MAYORAL PRIMARY MAP
+                            <h3 class="project-title">New York City Mayoral Map
                             </h3>
                             <p class="project-description">Where were Cuomo and Mamdani's fights the closest?</p>
                             <div class="project-tags">
@@ -571,20 +629,34 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
+                <div class="project-tile large">
+                    <a href="https://hazel-gandhi.github.io/auto-updating-site/">
+                        <img src="images/aqi.jpg" alt="Auto-updating AQI Map">
+                        <div class="project-content">
+                            <h3 class="project-title">Auto-updating AQI map</h3>
+                            <p class="project-description">A project that dynamically updates India's air quality
+                                information.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Img2Table</span>
+                                <span class="project-tag">Python/Pandas</span>
+                                <span class="project-tag">Datawrapper</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
 
                 <div class="project-tile tall">
                     <a href="https://hazel-gandhi.github.io/formula1-scraper/">
                         <img src="images/hero-img-f1.jpg" alt="Formula 1 Penalties">
                         <div class="project-content">
-                            <h3 class="project-title">FORMULA ONE DRIVERS ARE PAYING MORE FINES THAN EVER
+                            <h3 class="project-title">Formula One drivers are paying more fines than ever
                             </h3>
                             <p class="project-description">Drivers are complaining that the fines are unnecessary. The
                                 FIA says it has valid reasons for imposing them.</p>
                             <div class="project-tags">
                                 <span class="project-tag">Playwright</span>
-                                <span class="project-tag">Complex PDF Scraping</span>
-                                <span class="project-tag">Scrollytelling</span>
-                                <span class="project-tag">Adobe Illustrator</span>
+                                <span class="project-tag">PDF Scraping</span>
                                 <span class="project-tag">Python/Pandas</span>
                             </div>
                         </div>
@@ -595,7 +667,7 @@ You can explore some of my published work and projects from Columbia Journalism 
                         href="https://medium.com/@hazelgandhi98/what-historical-data-tells-us-about-who-will-win-the-french-open-353370888a9b">
                         <img src="images/hero-img-tennis.png" alt="French Open">
                         <div class="project-content">
-                            <h3 class="project-title">PREDICTING THE 2025 FRENCH OPEN</h3>
+                            <h3 class="project-title">Predicting the 2025 French Open</h3>
                             <p class="project-description">Using a logistic regression to predict who will win the men's
                                 singles title at Roland Garros.
                             </p>
@@ -611,7 +683,7 @@ You can explore some of my published work and projects from Columbia Journalism 
                     <a href="https://hazel-gandhi.github.io/hinge-data-analysis/">
                         <img src="images/hero-img-hinge.png" alt="Analyzing Hinge Data">
                         <div class="project-content">
-                            <h3 class="project-title">WHAT MY FRIENDS' HINGE DATA SAYS ABOUT THEM</h3>
+                            <h3 class="project-title">What my friends' Hinge data says about them</h3>
                             <p class="project-description">I crowdsourced Hinge data from 4 women and 4 men, and here's
                                 what I found.</p>
                             <div class="project-tags">
@@ -623,43 +695,14 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
-                <div class="project-tile tall">
-                    <a href="https://hazel-gandhi.github.io/academic-retractions-analysis/">
-                        <img src="images/hero-img-retraction.jpg" alt="Retraction Hero Image">
-                        <div class="project-content">
-                            <h3 class="project-title">RETRACTIONS IN ACADEMIC STUDIES RISE AS CRACKDOWN BEGINS ON PAPER
-                                MILLS</h3>
-                            <p class="project-description">Paper mills, known for publishing fraudulent or low-quality
-                                studies, have seen an increasing number of retractions since 2023.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Ggplot</span>
-                                <span class="project-tag">Python/Pandas</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
 
-                <div class="project-tile tall">
-                    <a href="https://hazel-gandhi.github.io/Auto-updating-AQI-website/">
-                        <img src="images/aqi.jpg" alt="Auto-updating AQI Map">
-                        <div class="project-content">
-                            <h3 class="project-title">AUTO-UPDATING AQI MAP</h3>
-                            <p class="project-description">A project that dynamically updates India's air quality
-                                information.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Img2Table</span>
-                                <span class="project-tag">Python/Pandas</span>
-                                <span class="project-tag">Datawrapper</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
 
                 <!-- Project 5 (Medium) -->
         </section>
 
         <section class="section">
-            <h2>PUBLISHED WORK</h2>
+            <h2>OTHER WORK:</h2>
             <div class="project-grid">
                 <!-- Published Work 1 (Medium) -->
                 <div class="project-tile large">
@@ -713,7 +756,23 @@ You can explore some of my published work and projects from Columbia Journalism 
                         </div>
                     </a>
                 </div>
+                <div class="project-tile medium">
+                    <a href="https://hazel-gandhi.github.io/academic-retractions-analysis/">
+                        <img src="images/hero-img-retraction.jpg" alt="Retraction Hero Image">
+                        <div class="project-content">
+                            <h3 class="project-title">Retrations in academic studies rise as crackdown begins on paper
+                                mills</h3>
+                            <p class="project-description">Paper mills, known for publishing fraudulent or low-quality
+                                studies, have seen an increasing number of retractions since 2023.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Ggplot</span>
+                                <span class="project-tag">Python/Pandas</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
+
         </section>
 
         <footer class="footer">
